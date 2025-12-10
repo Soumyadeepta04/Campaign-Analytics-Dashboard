@@ -1,6 +1,6 @@
 # 🚀 Campaign Dashboard - Full Stack Application
 
-> A modern, full-stack campaign management dashboard built with **FastAPI**, **PostgreSQL**, **Next.js**, and **TailwindCSS**.
+A modern, full-stack campaign management dashboard built with FastAPI, PostgreSQL, Next.js, and TailwindCSS.
 
 ![Tech Stack](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
@@ -20,22 +20,25 @@
 - [Deployment Guide](#-deployment-guide)
 - [Environment Variables](#-environment-variables)
 - [Evaluation Criteria Checklist](#-evaluation-criteria-checklist)
-- [FAQ](#-faq)
+- [Troubleshooting](#-troubleshooting)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Contact](#-contact)
 
 ---
 
 ## 📖 Project Overview
 
-This is a **full-stack web application** for managing marketing campaigns, built as part of a technical assessment.
+This is a full-stack web application for managing marketing campaigns, built as part of a technical assessment. The application provides a comprehensive dashboard for viewing, filtering, and analyzing marketing campaign data with real-time metrics.
 
 ### What This Application Does:
 
-✅ **Backend API** built with FastAPI and PostgreSQL (NeonDB)  
-✅ **Frontend Dashboard** with Next.js 16, React 19, and TailwindCSS  
-✅ **Real-time data fetching** from PostgreSQL database  
-✅ **Interactive filtering** by campaign status (Active/Paused)  
-✅ **Responsive UI/UX** with loading states and error handling  
-✅ **Production deployment** on Railway (backend) and Vercel (frontend)
+✅ Backend API built with FastAPI and PostgreSQL (NeonDB)  
+✅ Frontend Dashboard with Next.js 16, React 19, and TailwindCSS  
+✅ Real-time data fetching from PostgreSQL database  
+✅ Interactive filtering by campaign status (Active/Paused)  
+✅ Responsive UI/UX with loading states and error handling  
+✅ Production deployment on Railway (backend) and Vercel (frontend)
 
 ### You'll See:
 
@@ -170,38 +173,52 @@ Make sure you have these installed on your machine:
 - ✅ **Python 3.8+** → [Download Python](https://www.python.org/downloads/)
 - ✅ **Node.js 18+** → [Download Node.js](https://nodejs.org/)
 - ✅ **PostgreSQL Database** → Using [NeonDB](https://neon.tech/) (cloud-hosted, no local install needed)
+- ✅ **Git** → [Download Git](https://git-scm.com/)
 
 ---
 
-### ⚙️ Step 1: Backend Setup (FastAPI)
+### ⚙️ Step 1: Clone the Repository
 
-#### 1.1 Navigate to backend folder
+```bash
+# Clone the repository
+git clone https://github.com/Soumyadeepta04/Campaign-Dashboard.git
+
+# Navigate to project directory
+cd Campaign-Dashboard
+```
+
+---
+
+### ⚙️ Step 2: Backend Setup (FastAPI)
+
+#### 2.1 Navigate to backend folder
 
 ```bash
 cd backend
 ```
 
-#### 1.2 Create virtual environment (recommended)
+#### 2.2 Create virtual environment (recommended)
 
 **Windows:**
 
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
-
-**macOS/Linux:**
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-#### 1.3 Install Python dependencies
+#### 2.3 Install Python dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
+
+**Dependencies installed:**
+
+- fastapi
+- uvicorn[standard]
+- sqlalchemy
+- pydantic
+- python-dotenv
+- psycopg2-binary
+
+#### 2.4 Set up environment variables
+
+Create a `.env` file in the backend directory:
 
 **Dependencies installed:**
 
@@ -220,9 +237,9 @@ The `.env` file already contains the **NeonDB PostgreSQL connection string**:
 DATABASE_URL=postgresql://neondb_owner:npg_9Z4psOwYLzVD@ep-soft-bread-ahdmeu54-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
 ```
 
-> **Note:** This connects to a cloud-hosted PostgreSQL database on NeonDB. No local PostgreSQL installation required!
+**Note:** This connects to a cloud-hosted PostgreSQL database on NeonDB. No local PostgreSQL installation required!
 
-#### 1.5 Initialize database with sample data
+#### 2.5 Initialize database with sample data
 
 ```bash
 python init_db.py
@@ -236,7 +253,7 @@ python init_db.py
 
 This creates the `campaigns` table and inserts 10 sample campaigns.
 
-#### 1.6 Run the FastAPI server
+#### 2.6 Run the FastAPI server
 
 ```bash
 uvicorn main:app --reload
@@ -244,7 +261,7 @@ uvicorn main:app --reload
 
 ✅ **Backend is now running at:** `http://localhost:8000`
 
-#### 1.7 Test the API
+#### 2.7 Test the API
 
 Open your browser or use curl:
 
@@ -265,17 +282,17 @@ curl http://localhost:8000/campaigns
 
 ---
 
-### 🎨 Step 2: Frontend Setup (Next.js)
+### 🎨 Step 3: Frontend Setup (Next.js)
 
-#### 2.1 Open a NEW terminal and navigate to Frontend folder
+#### 3.1 Open a NEW terminal and navigate to Frontend folder
 
 ```bash
 cd Frontend
 ```
 
-> **Important:** Keep the backend terminal running! Open a new terminal for frontend.
+**Important:** Keep the backend terminal running! Open a new terminal for frontend.
 
-#### 2.2 Install Node.js dependencies
+#### 3.2 Install Node.js dependencies
 
 ```bash
 npm install
@@ -291,9 +308,9 @@ npm install
 - @tailwindcss/postcss
 - And more...
 
-#### 2.3 Set up environment variables
+#### 3.3 Set up environment variables
 
-The `.env.local` file should contain:
+Create a `.env.local` file in the Frontend directory:
 
 ```env
 NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
@@ -301,7 +318,7 @@ NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
 
 This tells the frontend where to find the backend API.
 
-#### 2.4 Run the Next.js development server
+#### 3.4 Run the Next.js development server
 
 ```bash
 npm run dev
@@ -309,7 +326,7 @@ npm run dev
 
 ✅ **Frontend is now running at:** `http://localhost:3000`
 
-#### 2.5 Open in browser
+#### 3.5 Open in browser
 
 Visit: **http://localhost:3000**
 
@@ -335,7 +352,7 @@ http://localhost:8000
 ### Base URL (Production - Railway)
 
 ```
-https://your-app.railway.app
+https://campaign-dashboard-production-xxxx.up.railway.app
 ```
 
 ---
@@ -427,6 +444,8 @@ You can test API endpoints directly from these interfaces!
 
 ---
 
+---
+
 ## 🌐 Deployment Guide
 
 ### Deploy Backend to Railway
@@ -450,25 +469,26 @@ Your backend is already configured for Railway with:
 4. **Select your repository**
 5. **Set Root Directory:** `backend` (Important!)
 6. Railway will auto-detect Python and install dependencies
-7. Click **"Deploy"**
 
 #### Step 3: Set Environment Variables (Railway)
 
 In Railway Dashboard:
 
 1. Go to your project → **Variables** tab
-2. Add: `DATABASE_URL` = Your NeonDB PostgreSQL connection string
+2. Add:
    ```
-   postgresql://neondb_owner:npg_9Z4psOwYLzVD@ep-soft-bread-ahdmeu54-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+   DATABASE_URL = postgresql://neondb_owner:npg_9Z4psOwYLzVD@ep-soft-bread-ahdmeu54-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
    ```
 
-> **Note:** Railway automatically provides `PORT` variable.
+**Note:** Railway automatically provides `PORT` variable.
 
 #### Step 4: Get Your Backend URL
 
 After deployment:
 
-- Copy your Railway URL (e.g., `https://your-app.railway.app`)
+- Copy your Railway URL (e.g., `https://campaign-dashboard-production-xxxx.up.railway.app`)
+- Test: `https://your-app.railway.app/campaigns`
+- Verify API docs: `https://your-app.railway.app/docs`ay.app`)
 - Test: `https://your-app.railway.app/campaigns`
 - Verify API docs: `https://your-app.railway.app/docs`
 
@@ -501,25 +521,29 @@ Your frontend is already configured for Vercel:
 4. **Framework Preset:** Next.js (auto-detected)
 5. **Root Directory:** `Frontend` (Important!)
 6. **Build Command:** `npm run build` (auto-filled)
-7. **Output Directory:** `.next` (auto-filled)
 
-#### Step 3: Set Environment Variables (Vercel) ⚠️ CRITICAL
+#### Step 3: Set Environment Variables (Vercel)
+
+⚠️ **CRITICAL**
 
 In Vercel project settings:
 
 1. Go to **Settings** → **Environment Variables**
 2. Add:
    - **Key:** `NEXT_PUBLIC_BACKEND_URL`
-   - **Value:** Your Railway backend URL (e.g., `https://your-app.railway.app`)
+   - **Value:** Your Railway backend URL (e.g., `https://campaign-dashboard-production-xxxx.up.railway.app`)
    - **Apply to:** Production, Preview, Development (check all)
 
-> **Important:** Must start with `NEXT_PUBLIC_` to be accessible in browser!
+**Important:** Must start with `NEXT_PUBLIC_` to be accessible in browser!
 
 #### Step 4: Deploy
 
 1. Click **"Deploy"**
 2. Wait for build to complete (2-3 minutes)
-3. Vercel will provide a URL (e.g., `https://your-app.vercel.app`)
+3. Vercel will provide a URL (e.g., `https://campaign-dashboard-frontend.vercel.app`)
+4. Click **"Deploy"**
+5. Wait for build to complete (2-3 minutes)
+6. Vercel will provide a URL (e.g., `https://your-app.vercel.app`)
 
 #### Step 5: Test Deployment
 
@@ -530,8 +554,6 @@ Visit your Vercel URL and verify:
 - ✅ Filter dropdown works (All/Active/Paused)
 - ✅ Summary statistics show correctly
 - ✅ No CORS errors in browser console (F12)
-
----
 
 ### Post-Deployment Checklist
 
@@ -563,6 +585,12 @@ Visit your Vercel URL and verify:
 
 ---
 
+- [ ] Filtering updates table correctly
+- [ ] All 10 campaigns display
+- [ ] Status badges show correct colors
+
+---
+
 ## 🔑 Environment Variables
 
 ### Backend (.env)
@@ -580,16 +608,19 @@ DATABASE_URL=postgresql://neondb_owner:npg_9Z4psOwYLzVD@ep-soft-bread-ahdmeu54-p
 ### Frontend (.env.local)
 
 **Local Development:**
-
-```env
-NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
-```
-
 **Production (Vercel):**
 
 ```env
-NEXT_PUBLIC_BACKEND_URL=https://your-app.railway.app
+NEXT_PUBLIC_BACKEND_URL=https://campaign-dashboard-production-xxxx.up.railway.app
 ```
+
+**For Vercel Deployment:**
+
+- Set `NEXT_PUBLIC_BACKEND_URL` in Vercel Dashboard → Settings → Environment Variables
+
+**Important:** The `NEXT_PUBLIC_` prefix makes the variable accessible in the browser!
+
+---
 
 **For Vercel Deployment:**
 
@@ -726,242 +757,183 @@ Examples of commit messages in this project:
 
 **.gitignore files:**
 
-- Backend: Excludes `*.db`, `__pycache__/`, `.env`, `venv/`
-- Frontend: Excludes `.next/`, `node_modules/`, `.env.local`
-
----
-
-### 6. Deployment ✅
-
 **Backend deployed on Railway:**
 
-- Live URL: `https://your-app.railway.app` (update after deployment)
+- Live URL: `https://campaign-dashboard-production-xxxx.up.railway.app`
 - API accessible at `/campaigns`
 - Interactive docs at `/docs`
 - Connected to NeonDB PostgreSQL
 
 **Frontend deployed on Vercel:**
 
-- Live URL: `https://your-app.vercel.app` (update after deployment)
+- Live URL: `https://campaign-dashboard-frontend.vercel.app`
 - Connected to Railway backend via `NEXT_PUBLIC_BACKEND_URL`
 - Fully functional dashboard with all features
 - Auto-deploys on git push
 
 ---
 
-## 📝 Live Demo URLs
+## 🐛 Troubleshooting
 
-After deployment, update these URLs in your submission:
+### Common Issues and Solutions
+
+#### Backend Issues
+
+**Issue:** `ModuleNotFoundError: No module named 'fastapi'`
+
+```bash
+# Solution: Install dependencies
+pip install -r requirements.txt
+```
+
+**Issue:** Database connection error
+
+```bash
+# Solution: Check DATABASE_URL in .env file
+# Ensure NeonDB connection string is correct
+```
+
+**Issue:** Port already in use (8000)
+
+```bash
+# Solution: Kill the process or use different port
+uvicorn main:app --reload --port 8001
+```
+
+#### Frontend Issues
+
+**Issue:** `NEXT_PUBLIC_BACKEND_URL is not defined`
+
+```bash
+# Solution: Create .env.local file with:
+NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
+```
+
+**Issue:** CORS error in browser console
+
+```bash
+# Solution: Check that CORS is enabled in backend main.py
+# Ensure frontend origin is allowed
+```
+
+**Issue:** npm install fails
+
+```bash
+# Solution: Clear cache and reinstall
+rm -rf node_modules package-lock.json
+npm cache clean --force
+npm install
+```
+
+#### Deployment Issues
+
+**Railway: Build fails**
+
+- Check that `Procfile` exists in backend directory
+- Verify `runtime.txt` specifies Python 3.11
+- Ensure `requirements.txt` is complete
+
+**Vercel: Environment variable not working**
+
+- Verify variable name starts with `NEXT_PUBLIC_`
+- Check that variable is set for all environments
+- Redeploy after adding environment variables
+
+**Database: No campaigns showing**
+
+```bash
+# Solution: Run initialization script
+python init_db.py
+```
+
+---
+
+## 📝 Live Demo URLs
 
 ### Backend (Railway)
 
 ```
-https://your-app.railway.app
+https://campaign-dashboard-production-xxxx.up.railway.app
 ```
 
 **API Endpoints:**
 
-- Health Check: `https://your-app.railway.app/`
-- Get Campaigns: `https://your-app.railway.app/campaigns`
-- API Docs: `https://your-app.railway.app/docs`
+- Health Check: `https://campaign-dashboard-production-xxxx.up.railway.app/`
+- Get Campaigns: `https://campaign-dashboard-production-xxxx.up.railway.app/campaigns`
+- API Docs: `https://campaign-dashboard-production-xxxx.up.railway.app/docs`
 
 ---
 
 ### Frontend (Vercel)
 
 ```
-https://your-app.vercel.app
+https://campaign-dashboard-frontend.vercel.app
 ```
 
 **Features:**
 
-- Campaign Dashboard: `https://your-app.vercel.app/`
+- Campaign Dashboard: `https://campaign-dashboard-frontend.vercel.app/`
 
 ---
 
-## 🤔 FAQ
+## 🤝 Contributing
 
-### Q: What is a "mock API"?
+Contributions are welcome! Here's how you can help:
 
-**A:** A "mock API" means a **sample/test API** that returns fake data for demonstration purposes. Your implementation is perfect! ✅
-
-- You built a **real FastAPI backend** with proper endpoints ✅
-- Data comes from a **real PostgreSQL database** (NeonDB) ✅
-- The 10 sample campaigns are "mock data" for testing ✅
-- This is exactly what the assignment asks for! ✅
-
-**You don't need any special "mock API URL"** - your FastAPI server running on Railway IS the mock API.
-
----
-
-### Q: Do I need to change anything for deployment?
-
-**A:** Your code is **deployment-ready**! ✅ Just follow these steps:
-
-1. **Push to GitHub** (you'll do this)
-2. **Deploy backend to Railway:**
-   - Set Root Directory: `backend`
-   - Add Environment Variable: `DATABASE_URL` (your NeonDB connection string)
-3. **Deploy frontend to Vercel:**
-   - Set Root Directory: `Frontend`
-   - Add Environment Variable: `NEXT_PUBLIC_BACKEND_URL` (your Railway URL)
-4. **Update this README** with your live URLs
-
-No code changes needed! 🎉
-
----
-
-### Q: Should I initialize the database after deploying to Railway?
-
-**A:** Yes! After first Railway deployment:
-
-1. Go to Railway Dashboard → Your Project
-2. Open **Terminal** tab (or use Railway CLI)
-3. Run: `python init_db.py`
-4. Verify: Visit `https://your-app.railway.app/campaigns` to see data
-
-This populates your NeonDB PostgreSQL database with 10 sample campaigns.
-
----
-
-### Q: What if I get CORS errors after deployment?
-
-**A:** The backend already has CORS enabled for all origins:
-
-```python
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-```
-
-This should work for Vercel deployment. If you want to restrict to your Vercel URL only (optional):
-
-```python
-allow_origins=["https://your-app.vercel.app"]
-```
-
-But `["*"]` works fine for this assignment! ✅
-
----
-
-### Q: Can I use SQLite instead of PostgreSQL?
-
-**A:** The assignment specifically asks for PostgreSQL. Your current setup uses:
-
-- **NeonDB** (cloud-hosted PostgreSQL) ✅
-- **Free tier** available ✅
-- **No local installation** required ✅
-- **Production-ready** database ✅
-
-Stick with PostgreSQL (NeonDB)! It's already configured and working. ✅
-
----
-
-### Q: How do I know if my deployment is successful?
-
-**A:** Check these:
-
-**Backend (Railway):**
-
-- [ ] Railway build succeeds (check logs)
-- [ ] Visit `https://your-app.railway.app/` → See health check JSON
-- [ ] Visit `https://your-app.railway.app/campaigns` → See 10 campaigns
-- [ ] Visit `https://your-app.railway.app/docs` → See Swagger UI
-
-**Frontend (Vercel):**
-
-- [ ] Vercel build succeeds (check logs)
-- [ ] Visit `https://your-app.vercel.app/` → See dashboard
-- [ ] Table shows 10 campaigns (data from Railway)
-- [ ] Filter dropdown works
-- [ ] No errors in browser console (F12)
-
----
-
-## 📧 Support & Troubleshooting
-
-If you encounter any issues during development or deployment:
-
-**Local Development:**
-
-1. Check if backend is running: http://localhost:8000/
-2. Check if frontend is running: http://localhost:3000/
-3. Check browser console (F12) for JavaScript errors
-4. Check terminal for Python/Node.js errors
-
-**Deployment:**
-
-1. Check Railway build logs for backend errors
-2. Check Vercel build logs for frontend errors
-3. Verify environment variables are set correctly
-4. Test API endpoints directly (use curl or Postman)
-
----
-
-## 🎉 Ready to Deploy!
-
-Your project is **100% ready** for deployment! 🚀
-
-### Deployment Steps Summary:
-
-1. ✅ **Push to GitHub:**
-
+1. **Fork the repository**
+2. **Create a feature branch**
    ```bash
-   git add .
-   git commit -m "Final version ready for deployment"
-   git push origin main
+   git checkout -b feature/amazing-feature
    ```
+3. **Commit your changes**
+   ```bash
+   git commit -m "Add some amazing feature"
+   ```
+4. **Push to the branch**
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+5. **Open a Pull Request**
 
-2. ✅ **Deploy Backend (Railway):**
+### Development Guidelines
 
-   - Connect GitHub repo
-   - Set Root Directory: `backend`
-   - Add env var: `DATABASE_URL`
-   - Deploy
-   - Run `python init_db.py` in Terminal
-
-3. ✅ **Deploy Frontend (Vercel):**
-
-   - Connect GitHub repo
-   - Set Root Directory: `Frontend`
-   - Add env var: `NEXT_PUBLIC_BACKEND_URL` (Railway URL)
-   - Deploy
-
-4. ✅ **Update README:**
-
-   - Replace placeholder URLs with your actual Railway and Vercel URLs
-
-5. ✅ **Submit:**
-   - Share both live links
-   - Share GitHub repository link
+- Follow the existing code style and structure
+- Write meaningful commit messages
+- Test your changes thoroughly (local + deployment)
+- Update documentation if needed
+- Add comments for complex logic
 
 ---
 
-## 📜 Project Summary for Submission
+## 📄 License
 
-**Tech Stack:**
-
-- Backend: FastAPI + PostgreSQL (NeonDB) + SQLAlchemy
-- Frontend: Next.js 16 + React 19 + TypeScript + TailwindCSS
-- Deployment: Railway (backend) + Vercel (frontend)
-
-**Key Features:**
-
-- REST API with `/campaigns` endpoint
-- Interactive dashboard with filtering
-- Responsive UI with loading/error states
-- Real-time data from PostgreSQL database
-- Clean code with TypeScript type safety
-- Comprehensive commit history
-
-**Evaluation Criteria Met:** ✅ All criteria satisfied (see checklist above)
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
-**Good luck with your evaluation!** 💪
+## 📞 Contact
 
-If you have any questions during deployment, refer to this README or check the API documentation at `/docs`.
+**Soumyadeepta Manna**
+
+- 📧 Email: soumyadeepta.work14@gmail.com
+- 💼 LinkedIn: [linkedin.com/in/soumyadeepta-manna-311949246](https://linkedin.com/in/soumyadeepta-manna-311949246)
+- 🐙 GitHub: [@Soumyadeepta04](https://github.com/Soumyadeepta04)
+- 💻 GeeksforGeeks: [soumyadeevn8c](https://auth.geeksforgeeks.org/user/soumyadeevn8c)
+
+---
+
+## 🙏 Acknowledgments
+
+- **FastAPI** - For the amazing Python web framework
+- **Next.js** - For the powerful React framework
+- **NeonDB** - For cloud PostgreSQL hosting
+- **Railway** - For seamless backend deployment
+- **Vercel** - For frontend hosting and CI/CD
+- **TailwindCSS** - For beautiful, responsive styling
+
+---
+
+Made with ❤️ by Soumyadeepta Manna
+
+
+
