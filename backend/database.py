@@ -8,10 +8,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # PostgreSQL database URL from environment variable
-SQLALCHEMY_DATABASE_URL = os.getenv(
-    "DATABASE_URL",
-    "postgresql://neondb_owner:npg_9Z4psOwYLzVD@ep-soft-bread-ahdmeu54-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require"
-)
+SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
+
+if not SQLALCHEMY_DATABASE_URL:
+    raise ValueError(
+        "DATABASE_URL environment variable is not set. Please check your .env file.")
 
 # Create engine (no check_same_thread for PostgreSQL)
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
@@ -21,5 +22,3 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # Create Base class
 Base = declarative_base()
-
-
