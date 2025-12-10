@@ -1,4 +1,4 @@
-# 🚀 Campaign Dashboard - Full Stack Application
+# 🚀 Campaign Analytics Dashboard - Full Stack Application
 
 A modern, full-stack campaign management dashboard built with FastAPI, PostgreSQL, Next.js, and TailwindCSS.
 
