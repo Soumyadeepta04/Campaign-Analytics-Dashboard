@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/* -------------------------------
+   CSS Variables (Light + Dark)
+-------------------------------- */
+:root {
+  --background: 249 250 251;
+  --foreground: 17 24 39;
+  --card: 255 255 255;
+  --card-foreground: 17 24 39;
+  --primary: 59 130 246;
+  --primary-foreground: 255 255 255;
+  --secondary: 243 244 246;
+  --secondary-foreground: 17 24 39;
+  --muted: 243 244 246;
+  --muted-foreground: 107 114 128;
+  --accent: 243 244 246;
+  --accent-foreground: 17 24 39;
+  --border: 229 231 235;
+  --input: 229 231 235;
+  --ring: 59 130 246;
+  --radius: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 10 10 10;
+    --foreground: 249 250 251;
+    --card: 23 23 23;
+    --card-foreground: 249 250 251;
+    --primary: 59 130 246;
+    --primary-foreground: 255 255 255;
+    --secondary: 38 38 38;
+    --secondary-foreground: 249 250 251;
+    --muted: 38 38 38;
+    --muted-foreground: 156 163 175;
+    --accent: 38 38 38;
+    --accent-foreground: 249 250 251;
+    --border: 38 38 38;
+    --input: 38 38 38;
+    --ring: 59 130 246;
+  }
+}
+
+/* -------------------------------
+   Base Styles (NO @apply)
+-------------------------------- */
+* {
+  border-color: rgb(var(--border));
+}
+
+body {
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* -------------------------------
+   Custom Utility Classes
+-------------------------------- */
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility bg-background {
+  background-color: rgb(var(--background));
+}
+
+@utility text-foreground {
+  color: rgb(var(--foreground));
+}
+
+@utility bg-card {
+  background-color: rgb(var(--card));
+}
+
+@utility text-card-foreground {
+  color: rgb(var(--card-foreground));
+}
