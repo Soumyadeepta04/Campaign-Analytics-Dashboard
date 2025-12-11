@@ -11,10 +11,51 @@ A modern, full-stack campaign management dashboard built with FastAPI, PostgreSQ
 
 - **Frontend:** [https://campaign-analytics-dashboard-lovat.vercel.app/](https://campaign-analytics-dashboard-lovat.vercel.app/)
 - **Backend API:** [https://campaign-analytics-dashboard-production-790e.up.railway.app](https://campaign-analytics-dashboard-production-790e.up.railway.app)
-- **API Documentation:** [https://campaign-analytics-dashboard-production-790e.up.railway.app/docs](https://campaign-analytics-dashboard-production-790e.up.railway.app/docs)
-- **GitHub Repository:** [https://github.com/Soumyadeepta04/Campaign-Analytics-Dashboard](https://github.com/Soumyadeepta04/Campaign-Analytics-Dashboard)
 
 ---
+
+## 📸 Application Screenshots
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/0537632b-16ab-4342-acf4-9639d54a3595" alt="All Campaigns Dashboard" width="450"/>
+        <br/>
+        <b>📊 All Campaigns</b>
+        <br/>
+        <i>Overview of all marketing campaigns with key metrics</i>
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/b5a9149a-ebc1-437c-b718-c85925ead338" alt="True Campaigns Dashboard" width="450"/>
+        <br/>
+        <b>✅ True Campaigns</b>
+        <br/>
+        <i>Filtered view showing only active / True campaigns</i>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/d26e6c06-3fe7-4c9c-80d6-ae615f8c28ff" alt="Paused Campaigns Dashboard" width="450"/>
+        <br/>
+        <b>⏸️ Paused Campaigns</b>
+        <br/>
+        <i>Displays all campaigns currently paused or inactive</i>
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/c6d85269-dd2c-4368-8e50-f49d22695958" alt="PostgreSQL Neon Database" width="450"/>
+        <br/>
+        <b>🗄️ Neon PostgreSQL Database</b>
+        <br/>
+        <i>Cloud database view showing stored campaign records</i>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<br/>
+
+--- 
 
 ## 📋 Table of Contents
 
