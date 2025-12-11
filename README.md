@@ -7,6 +7,13 @@ A modern, full-stack campaign management dashboard built with FastAPI, PostgreSQ
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
+## 🌐 Live Demo
+
+- **Frontend:** [https://campaign-analytics-dashboard-lovat.vercel.app/](https://campaign-analytics-dashboard-lovat.vercel.app/)
+- **Backend API:** [https://campaign-analytics-dashboard-production-790e.up.railway.app](https://campaign-analytics-dashboard-production-790e.up.railway.app)
+- **API Documentation:** [https://campaign-analytics-dashboard-production-790e.up.railway.app/docs](https://campaign-analytics-dashboard-production-790e.up.railway.app/docs)
+- **GitHub Repository:** [https://github.com/Soumyadeepta04/Campaign-Analytics-Dashboard](https://github.com/Soumyadeepta04/Campaign-Analytics-Dashboard)
+
 ---
 
 ## 📋 Table of Contents
@@ -934,6 +941,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
 Made with ❤️ by Soumyadeepta Manna
-
-
-
