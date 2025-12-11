@@ -14,6 +14,9 @@ A modern, full-stack campaign management dashboard built with FastAPI, PostgreSQ
 
 ---
 
+## 🎬 Project Walkthrough Video
+<div align="center"> <video src="https://github.com/user-attachments/assets/825eeb15-fe2a-4477-9b6e-4cfd988e4c7a" width="700" controls> Your browser does not support the video tag. </video> <p><i>Watch this short walkthrough of the Campaign Analytics Dashboard</i></p> </div>
+
 ## 📸 Application Screenshots
 
 <div align="center">
